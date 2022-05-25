@@ -15,8 +15,8 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_file: './out/.'
-        destination_repo: 'csae8092/sumsi'
-        destination_folder: 'test-dir'
+        destination_repo: 'arthur-schnitzler/schnitzler-briefe-tex'
+        destination_folder: 'tex'
         user_email: 'peter.andorfer@oeaw.ac.at.com'
         user_name: 'csae8092'
-        commit_message: 'A custom message for the commit'
+        commit_message: 'copy .tex files'
