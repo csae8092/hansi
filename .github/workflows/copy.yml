@@ -1,0 +1,22 @@
+name: Copy File
+
+on: push
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: './out/.'
+        destination_repo: 'csae8092/sumsi'
+        destination_folder: 'test-dir'
+        user_email: 'peter.andorfer@oeaw.ac.at.com'
+        user_name: 'csae8092'
+        commit_message: 'A custom message for the commit'
