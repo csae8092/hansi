@@ -17,6 +17,7 @@ jobs:
         source_file: './out/.'
         destination_repo: 'csae8092/sumsi'
         destination_folder: 'test-dir'
+        destination_branch: 'master'
         user_email: 'peter.andorfer@oeaw.ac.at.com'
         user_name: 'csae8092'
         commit_message: 'A custom message for the commit'
