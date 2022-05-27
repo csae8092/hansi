@@ -1152,7 +1152,7 @@
             <xsl:apply-templates select="teiHeader"/>
                <xsl:text>\end{anhang}</xsl:text>
          </xsl:when>
-         <xsl:otherwise>  <xsl:apply-templates select="teiHeader"/>
+         <xsl:otherwise>  <xsl:apply-templates select="teiHeader"/>
             <!--            <xsl:text>\doendnotes{B}</xsl:text>
 -->
          </xsl:otherwise>
@@ -1556,7 +1556,7 @@
             <xsl:for-each select="distinct-values(handNote/@corresp)">
                <xsl:variable name="corespi" select="."/>
                <xsl:variable name="corespi-name"
-                  select="key('person-lookup', ($corespi), $persons)/persName" as="node()?"/>
+                  select="key('person-lookup', ($corespi), $persons)/persName[1]" as="node()?"/>
                <xsl:text>Handschrift </xsl:text>
                <xsl:value-of
                   select="concat($corespi-name/forename, ' ', $corespi-name/surname)"/>
@@ -2588,7 +2588,7 @@
                <xsl:value-of select="$drucke-zaehler"/>
             </xsl:otherwise>
          </xsl:choose>
-         <xsl:text>) </xsl:text>
+         <xsl:text>) </xsl:text>
       </xsl:if>
       <!-- Hier Sigle auskommentiert -->
       <!--<xsl:choose>
@@ -4147,7 +4147,7 @@
    <xsl:template match="gap[@unit = 'lines' and @reason = 'illegible']">
       <xsl:text>\textcolor{gray}{[</xsl:text>
       <xsl:value-of select="@quantity"/>
-      <xsl:text> Zeilen unleserlich{]} </xsl:text>
+      <xsl:text> Zeilen unleserlich{]} </xsl:text>
       <xsl:text>}</xsl:text>
    </xsl:template>
    <xsl:template match="gap[@reason = 'outOfScope']">
