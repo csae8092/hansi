@@ -19,6 +19,7 @@
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>
-    <delete dir="${to_tex}"/>
-    <mkdir dir="${to_tex}"/>
+    <delete>
+        <fileset dir="${to_tex}" includes="*.xml"/>
+      </delete>
 </project>
