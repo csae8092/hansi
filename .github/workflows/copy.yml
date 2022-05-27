@@ -18,20 +18,20 @@ jobs:
     - name: Convert Files
       run: |
         ant
-  copyfile:
-    needs: maketex
-    runs-on: ubuntu-latest
-    - name: Pushes test file
-      uses: dmnemec/copy_file_to_another_repo_action@main
-      env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      with:
-        source_file: './out/.'
-        destination_repo: 'arthur-schnitzler/schnitzler-briefe-tex'
-        destination_folder: 'tex'
-        user_email: 'peter.andorfer@oeaw.ac.at.com'
-        user_name: 'csae8092'
-        commit_message: 'copy .tex files'
-    - name: remove output folder
-      run: |
-        rm -rf ./out
+  # copyfile:
+  #   needs: maketex
+  #   runs-on: ubuntu-latest
+  #   - name: Pushes test file
+  #     uses: dmnemec/copy_file_to_another_repo_action@main
+  #     env:
+  #       API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+  #     with:
+  #       source_file: './out/.'
+  #       destination_repo: 'arthur-schnitzler/schnitzler-briefe-tex'
+  #       destination_folder: 'tex'
+  #       user_email: 'peter.andorfer@oeaw.ac.at.com'
+  #       user_name: 'csae8092'
+  #       commit_message: 'copy .tex files'
+  #   - name: remove output folder
+  #     run: |
+  #       rm -rf ./out
