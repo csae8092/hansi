@@ -16,14 +16,14 @@ jobs:
         apt-get update && apt-get install openjdk-11-jre-headless ant -y --no-install-recommend
         ./dl_saxon.sh
     - name: Convert Files
-      run: ant
+      run: |
+        ant
+        ls
   copyfile:
     needs: maketex
     name: Copy Tex files
     runs-on: ubuntu-latest
     steps:
-    - name: look around
-    - run: ls
     - name: Pushes test file
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
