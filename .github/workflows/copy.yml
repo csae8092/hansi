@@ -3,7 +3,7 @@ name: Process to Tex and Copy
 on:
   workflow_dispatch
 jobs:
-  make-tex:
+  maketex:
     name: Converts TEI/XML into Tex
     runs-on: ubuntu-latest
     env:
@@ -18,8 +18,8 @@ jobs:
     - name: Convert Files
       run: |
         ant
-  copy-file:
-    needs: make-tex
+  copyfile:
+    needs: maketex
     runs-on: ubuntu-latest
     - name: Pushes test file
       uses: dmnemec/copy_file_to_another_repo_action@main
