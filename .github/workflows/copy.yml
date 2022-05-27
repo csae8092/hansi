@@ -15,7 +15,7 @@ jobs:
       run: |
         apt-get update && apt-get install openjdk-11-jre-headless ant -y --no-install-recommend
         ./dl_saxon.sh
-    name: Convert Files
+    - name: Convert Files
       run: |
         ant
   copy-file:
