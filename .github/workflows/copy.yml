@@ -26,9 +26,10 @@ jobs:
       with:
         source_file: './out/.'
         destination_repo: 'arthur-schnitzler/schnitzler-briefe-tex'
-        destination_folder: 'tex'
+        destination_folder: 'to_process'
         user_email: 'peter.andorfer@oeaw.ac.at.com'
         user_name: 'csae8092'
         commit_message: 'copy .tex files'
     - name: remove output folder
-      run: rm -rf ./out
+      run: |
+        rm -rf ./out
